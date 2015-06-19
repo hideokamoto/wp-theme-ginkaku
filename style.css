@@ -35,7 +35,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Clearings
 # Widgets
 # Content
-    ## Posts and pages
+		## Posts and pages
 	## Asides
 	## Comments
 # Infinite scroll
@@ -50,7 +50,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust:     100%;
+	-ms-text-size-adjust:		 100%;
 }
 
 body {
@@ -352,7 +352,7 @@ html {
 *,
 *:before,
 *:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
+	box-sizing: border-box;
 }
 
 body {
@@ -518,12 +518,69 @@ a:active {
 }
 
 /*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+.container{
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 37.5em) {
+	.site-navbar{
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	/* Site Branding */
+	.site-branding{
+		width: 40%;
+	}
+	.main-navigation{
+		width: 60%;
+	}
+
+}
+
+.site-title{
+	margin: 0.5rem auto;
+	font-size: 1rem;
+}
+
+.site-title a{
+	text-decoration: none;
+}
+
+.site-description{
+	font-size: 0.875rem;
+}
+
+
+.site-content{
+	display: flex;
+	justify-content: space-around;
+	align-items: stretch;
+	flex-wrap: wrap;
+}
+
+.content-area{
+	width: 70%;
+}
+
+.widget-area{
+	width: 29%;
+}
+
+/*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
 	clear: both;
 	display: block;
-	float: left;
 	width: 100%;
 }
 
@@ -535,27 +592,33 @@ a:active {
 }
 
 .main-navigation li {
-	float: left;
+	width: 100%;
 	position: relative;
 }
 
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	padding: 20px 0;
+	line-height: 1.25;
+	color: #000000;
+}
+.main-navigation a:hover{
+	background-color: #666666;
 }
 
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
-	top: 1.5em;
+	top: 5em;
 	left: -999em;
 	z-index: 99999;
 }
 
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
+.main-navigation .children .children {
+	left: 100px;
+	top: 3rem;
 }
 
 .main-navigation ul ul a {
@@ -603,8 +666,21 @@ a:active {
 	.menu-toggle {
 		display: none;
 	}
-	.main-navigation ul {
+	.main-navigation .menu{
+		display: flex;
+		align-items: stretch;
+	}
+	.main-navigation .nav-menu {
+		width: 100%;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: stretch;
+		text-align: center;
+	}
+	.main-navigation li:hover > .children{
 		display: block;
+		background-color: #fff;
 	}
 }
 

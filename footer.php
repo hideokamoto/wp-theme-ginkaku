@@ -12,7 +12,18 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
+		<div class="container footer-widgets">
+			<div class="widget-area">
+				<?php dynamic_sidebar( 'footer-1' ); ?>
+			</div><!-- #secondary -->
+			<div class="widget-area">
+				<?php dynamic_sidebar( 'footer-2' ); ?>
+			</div><!-- #secondary -->
+			<div class="widget-area">
+				<?php dynamic_sidebar( 'footer-3' ); ?>
+			</div><!-- #secondary -->
+		</div>
+		<div class="site-info container">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'ginkaku' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'ginkaku' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
 			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'ginkaku' ), 'ginkaku', '<a href="https://profiles.wordpress.org/hideokamoto" rel="designer">Hidetaka Okamoto</a>' ); ?>

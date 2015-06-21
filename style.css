@@ -588,6 +588,10 @@ a:active {
 		width: 29%;
 		padding: 10px 20px;
 	}
+
+	.content-area.single-column{
+		width: 100%;
+	}
 }
 
 /*--------------------------------------------------------------

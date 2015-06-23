@@ -4,7 +4,7 @@
  *
  * @package Ginkaku
  */
-
+if ( ! isset( $content_width ) ) $content_width = 960;
 if ( ! function_exists( 'ginkaku_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.

@@ -539,18 +539,18 @@ a:active {
 ## Header
 --------------------------------------------------------------*/
 .site-header {
-    background-color: #666;
-    color: #fff;
-    padding: 5px 0 100px;
+	background-color: #666;
+	color: #fff;
+	padding: 5px 0 100px;
 }
 
 .site-header a {
-    color: #fff;
+	color: #fff;
 }
 
 .site-main-image a,
 .site-main-image img {
-    display: block;
+	display: block;
 }
 
 .site-title{
@@ -704,6 +704,9 @@ a:active {
 .main-navigation li.focus > a {
 }
 
+.main-navigation ul ul a {
+	color: #000000;
+}
 
 .main-navigation ul ul :hover > a,
 .main-navigation ul ul .focus > a {
@@ -772,7 +775,6 @@ a:active {
 
 	.main-navigation ul ul a {
 		width: 200px;
-		color: #000000;
 	}
 }
 

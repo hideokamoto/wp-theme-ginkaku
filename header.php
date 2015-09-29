@@ -15,21 +15,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
-
-<?php if ( get_header_image() ) : ?>
-	<style>
-	.site-header{
-		background-image:url(<?php header_image(); ?>);
-		background-repeat:no-repeat;
-		background-size: cover;
-		padding: 0 0 250px;
-	}
-	.site-navbar-row{
-		padding-top: 5px;
-		background-color: #333;
-	}
-	</style>
-<?php endif;?>
+<?php ginkaku_header_image(); ?>
 
 </head>
 <body <?php body_class(); ?>>

@@ -35,6 +35,25 @@ function ginkaku_custom_header_setup() {
 }
 add_action( 'after_setup_theme', 'ginkaku_custom_header_setup' );
 
+if ( ! function_exists ( 'ginkaku_header_image' ) ):
+function ginkaku_header_image() {
+	if ( get_header_image() ) : ?>
+		<style>
+		.site-header{
+			background-image:url(<?php header_image(); ?>);
+			background-repeat:no-repeat;
+			background-size: cover;
+			padding: 0 0 250px;
+		}
+		.site-navbar-row{
+			padding-top: 5px;
+			background-color: #333;
+		}
+		</style>
+	<?php endif;
+}
+endif;
+
 if ( ! function_exists( 'ginkaku_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog

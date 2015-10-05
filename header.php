@@ -15,7 +15,6 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
-<?php ginkaku_header_image(); ?>
 
 </head>
 <body <?php body_class(); ?>>

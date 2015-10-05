@@ -1,16 +1,5 @@
 <?php
 /**
- * Sample implementation of the Custom Header feature
- * http://codex.wordpress.org/Custom_Headers
- *
- * You can add an optional custom header image to header.php like so ...
- *
-	<?php if ( get_header_image() ) : ?>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-		<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
-	</a>
-	<?php endif; // End header image check. ?>
- *
  * @package Ginkaku
  */
 
@@ -35,12 +24,20 @@ function ginkaku_custom_header_setup() {
 }
 add_action( 'after_setup_theme', 'ginkaku_custom_header_setup' );
 
-if ( ! function_exists ( 'ginkaku_header_image' ) ):
-function ginkaku_header_image() {
-	if ( get_header_image() ) : ?>
-		<style>
+function my_styles_metho() {
+	$custom_css = '';
+	if ( get_header_image() ) {
+    $custom_css .= ginkaku_header_image_style ();
+	}
+	wp_add_inline_style( 'ginkaku-style', $custom_css );
+}
+add_action( 'wp_enqueue_scripts', 'my_styles_metho' );
+
+function ginkaku_header_image_style () {
+	$header_image = get_header_image();
+	$custom_css = "
 		.site-header{
-			background-image:url(<?php header_image(); ?>);
+			background-image:url( {$header_image} );
 			background-repeat:no-repeat;
 			background-size: cover;
 			padding: 0 0 250px;
@@ -49,10 +46,9 @@ function ginkaku_header_image() {
 			padding-top: 5px;
 			background-color: #333;
 		}
-		</style>
-	<?php endif;
+	";
+	return $custom_css;
 }
-endif;
 
 if ( ! function_exists( 'ginkaku_header_style' ) ) :
 /**

@@ -24,14 +24,14 @@ function ginkaku_custom_header_setup() {
 }
 add_action( 'after_setup_theme', 'ginkaku_custom_header_setup' );
 
-function my_styles_metho() {
+function ginkaku_inline_styles() {
 	$custom_css = '';
 	if ( get_header_image() ) {
     $custom_css .= ginkaku_header_image_style ();
 	}
 	wp_add_inline_style( 'ginkaku-style', $custom_css );
 }
-add_action( 'wp_enqueue_scripts', 'my_styles_metho' );
+add_action( 'wp_enqueue_scripts', 'ginkaku_inline_styles' );
 
 function ginkaku_header_image_style () {
 	$header_image = get_header_image();

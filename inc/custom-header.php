@@ -44,7 +44,7 @@ function ginkaku_header_image_style () {
 		}
 		.site-navbar-row{
 			padding-top: 5px;
-			background-color: #333;
+			background-color: #82663a;
 		}
 	";
 	return $custom_css;

@@ -365,7 +365,7 @@ html {
 }
 
 body {
-	background: #e5e5e5; /* Fallback for when there is no custom background color defined. */
+	background: #fcfaf2; /* Fallback for when there is no custom background color defined. */
 }
 
 blockquote:before,
@@ -631,7 +631,7 @@ a:active {
 ## Footer
 --------------------------------------------------------------*/
 .site-footer{
-	background-color: #666;
+	background-color: #82663a;
 	color: #fff;
 	padding: 20px 0;
 }

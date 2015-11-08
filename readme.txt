@@ -5,7 +5,7 @@ Tags: translation-ready, custom-background, theme-options, custom-menu, post-for
 
 Requires at least: 4.0
 Tested up to: 4.2.2
-Stable tag: 1.1.3
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,9 @@ Hi. I'm a starter theme called Ginkaku, or underscores, if you like. I'm a theme
 Ginkaku includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 1.2 - Nov 8 2015 =
+* Exchange Color.
 
 = 1.1 - Aug 11 2015 =
 * Exchange Header Images and little description's fix
